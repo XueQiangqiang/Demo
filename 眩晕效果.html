@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* 100vh:当前窗口高度 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            overflow: hidden;
+        }
+
+        ul {
+            /* 相对定位 */
+            width: 100px;
+            height: 100px;
+
+            position: relative;
+        }
+
+        li {
+            /* 绝对定位 */
+            position: absolute;
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            border-radius: 20px 30px 40px 50px;
+            filter: hue-rotate(calc(15deg * var(--i)));
+            transform-style: preserve-3d;
+            animation: move 25s linear infinite;
+            /* animation-delay: 1s; */
+            animation-delay: calc(-1s * var(--i));
+        }
+
+
+        @keyframes move {
+            from {
+                /* 景深 */
+                transform: perspective(1000px) translateZ(0) rotate(0);
+            }
+
+            to {
+                transform: perspective(1000px) translateZ(1000px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li style="--i:1"></li>
+        <li style="--i:2"></li>
+        <li style="--i:3"></li>
+        <li style="--i:4"></li>
+        <li style="--i:5"></li>
+        <li style="--i:6"></li>
+        <li style="--i:7"></li>
+        <li style="--i:8"></li>
+        <li style="--i:9"></li>
+        <li style="--i:10"></li>
+        <li style="--i:11"></li>
+        <li style="--i:12"></li>
+        <li style="--i:13"></li>
+        <li style="--i:14"></li>
+        <li style="--i:15"></li>
+        <li style="--i:16"></li>
+        <li style="--i:17"></li>
+        <li style="--i:18"></li>
+        <li style="--i:19"></li>
+        <li style="--i:20"></li>
+        <li style="--i:21"></li>
+        <li style="--i:22"></li>
+        <li style="--i:23"></li>
+        <li style="--i:24"></li>
+        <li style="--i:25"></li>
+    </ul>
+</body>
+
+</html>
